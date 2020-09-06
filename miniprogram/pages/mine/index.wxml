@@ -1,0 +1,23 @@
+<!-- <i-card full extra="{{usertype}}" thumb='{{userInfo.avatarUrl}}' i-class='h'>
+    <view slot="content" class="username">{{userInfo.nickName}}</view>
+</i-card> -->
+<view class="top">
+    <view class="top2"><image class="avatar" src="{{userInfo.avatarUrl}}"></image></view>
+    <view class="type">{{usertype}}</view>
+</view>
+<text>\n</text>
+<i-cell-group>
+    <i-cell title="用户信息" is-link url="/pages/userinfo/index"><i-icon slot="icon" type="addressbook" size="22" color="#f4d307" /></i-cell>
+    <i-cell title="编辑个人资料" is-link url="/pages/updateinfo/index"><i-icon slot="icon" type="brush" size="22" color="#f4d307" /></i-cell>
+    <!-- <i-cell title="身份认证" is-link url="/pages/dashboard/index"><i-icon slot="icon" type="businesscard" size="20" color="#80848f" /></i-cell> -->
+    <!-- <i-cell title="绑定手机" is-link url="/pages/bindphone/index"><i-icon slot="icon" type="mobilephone" size="20" color="#80848f" /></i-cell> -->
+    <text>\n</text>
+    <i-cell title="我的收藏" is-link url="/pages/dashboard/index"><i-icon slot="icon" type="collection" size="22" color="#f4d307" /></i-cell>
+    <i-cell title="我要摆摊" is-link url="/pages/dashboard/index"><i-icon slot="icon" type="add" size="22" color="#f4d307" /></i-cell>
+    <text>\n</text>
+    <!-- <i-cell title="联系客服" is-link url="/pages/dashboard/index"><i-icon slot="icon" type="customerservice" size="20" color="#80848f" /></i-cell>
+    <i-cell title="帮助" is-link url="/pages/dashboard/index"><i-icon slot="icon" type="feedback" size="20" color="#80848f" /></i-cell> -->
+</i-cell-group>
+<view class="exit">
+    <i-button bind:click="handleClick" type="error">退出登录</i-button>
+</view>

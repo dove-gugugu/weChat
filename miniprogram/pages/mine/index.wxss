@@ -1,0 +1,26 @@
+Page{
+    background-color: #fff;
+}
+.exit{
+    margin-top: 50px;
+}
+.avatar{
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+}
+.top{
+    background-color:#7272b6;
+    height: 40vh;
+}
+.top2{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.type{
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    color: #535354;
+}

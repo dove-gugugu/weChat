@@ -1,0 +1,28 @@
+<view class="container">
+    <image src="../../images/bindtel.png" class="img"></image>
+</view>
+<view class="text">
+    <text>小程序默认绑定的手机号为\n</text>
+    <text>您的微信所绑定的手机号</text>
+</view>
+
+<button catchtap='clickPup' class="btn">绑定其他手机号</button>
+
+<!-- 底部弹窗动画的内容 -->
+<view class='pupContent {{click? "showContent": "hideContent"}} {{option? "open": "close"}}' hover-stop-propagation='true'>
+  <view>
+    <text style="margin-top:5px; font-size:14px; color: gray;">小程序\t\t申请使用\n</text>
+    <text style="font-weight:700;font-size:16px;margin-left:5px;">您的手机号码</text>
+    <i-divider class="divid"></i-divider>
+    <text space="nbsp" style="margin-left:5px;">{{tel}}</text><text  space="nbsp" style="color:gray;">      微信绑定号码</text> 
+    <i-divider class="divid"></i-divider>
+    <text space="nbsp" style="color:#0967ae;">  使用其他手机号码\n\n</text>
+    <button class="btn1">拒绝</button>
+    <button class="btn2">允许</button>
+  </view>
+</view>
+<!-- 固定的背景 -->
+<view class='pupContentBG {{click?"showBG":"hideBG"}} {{option?"openBG":"closeBG"}}' catchtap='clickPup'>
+</view>
+ 
+
