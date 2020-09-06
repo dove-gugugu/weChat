@@ -8,6 +8,7 @@ Page({
   data: {
     current: '../../pages/map/map',
     markers: [],
+    marker: {},
     showModal: false,
   },
   handleChange ({ detail }) {
@@ -24,12 +25,17 @@ Page({
         id: markerId,
       },
       success: res => {
-        wx.showToast({
-          title: '调用成功',
-        })
-        console.log(res.result);
+        // wx.showToast({
+        //   title: '调用成功',
+        // })
+        console.log(res.result.data[0].title);
         let marker = res.result.data[0];
         that.myMapContext.moveToLocation({longitude: marker.longitude, latitude: marker.latitude});
+        that.setData({
+          marker: marker,
+        });
+        // 暂时读取不到返回值，大概是异步反应比较慢
+        // return marker;
       },
       fail: err => {
         wx.showToast({
@@ -77,9 +83,11 @@ Page({
   },
   // 点击其他标记后地图中心转移到标记位置 --> PC上测试有问题，但是手机上暂时没有
   clickMarkTap: function(e) {
-    console.log(e.detail.markerId);
-    this.getMarks(e.detail.markerId);
-    
+    console.log(e.markerId);
+    // 获取点击的Marker信息并将其位置移至视觉中心
+    this.getMarks(e.markerId);
+    let marker = this.data.marker;
+    console.log(marker);
   },
   // 显示/隐藏摊点信息卡片
   showCard: function() {
