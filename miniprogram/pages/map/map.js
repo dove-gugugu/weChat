@@ -34,8 +34,7 @@ Page({
         that.setData({
           marker: marker,
         });
-        // 暂时读取不到返回值，大概是异步反应比较慢
-        // return marker;
+        
       },
       fail: err => {
         wx.showToast({
@@ -88,6 +87,7 @@ Page({
     this.getMarks(e.markerId);
     let marker = this.data.marker;
     console.log(marker);
+    this.showCard();
   },
   // 显示/隐藏摊点信息卡片
   showCard: function() {
@@ -104,7 +104,7 @@ Page({
     this.myMapContext = wx.createMapContext('newmap', this);
     // 中心点偏移 会出错，好像是版本问题，暂时不要调用
     // this.myMapContext.setCenterOffset([0.6, 0.5]);
-    //this.getLocation();
+    // this.getLocation();
     let that = this;
     this.getAroundMarkers();
     

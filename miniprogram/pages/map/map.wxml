@@ -14,10 +14,11 @@
 		<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
 		<view class="modalDlg" wx:if="{{showModal}}">
 			<!-- <image src="/figures/logo-smile.png"/> -->
-			<text>欢迎来到模态对话框~</text>
+			<text>{{marker.title}}~</text>
+			<text>{{marker}}</text>
 			<button bindtap="hideCard">点我可以关掉对话框</button>
 		</view>
-		<button bindtap="showCard">点我弹窗</button>
+		<!-- <button bindtap="showCard">点我弹窗</button> -->
 
 	</map>
 </view>
