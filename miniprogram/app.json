@@ -6,7 +6,8 @@
     "pages/updateinfo/index",
     "pages/userinfo/index",
     "components/homepage/homepage",
-    "components/mine/mine"
+    "components/mine/mine",
+    "pages/createMarker/createMarker"
   ],
   "window": {
     "backgroundColor": "#fff",
@@ -18,22 +19,22 @@
   "tabBar": {
     "list": [
       {
-      "pagePath": "pages/map/map",
-      "text": "首页",
-      "iconPath": "../miniprogram/icons/home.png",
-      "selectedIconPath": "../miniprogram/icons/shome.png"
-    },
-    {
-      "pagePath": "pages/mine/index",
-      "text": "我的",
-      "iconPath": "../miniprogram/icons/mine.png",
-      "selectedIconPath": "../miniprogram/icons/smine.png"
-    }
-  ],
-  "color": "#80848f",
-  "selectedColor":"#80848f",
-  "backgroundColor":"#fff",
-  "borderStyle":"white"
+        "pagePath": "pages/map/map",
+        "text": "首页",
+        "iconPath": "../miniprogram/icons/home.png",
+        "selectedIconPath": "../miniprogram/icons/shome.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "../miniprogram/icons/mine.png",
+        "selectedIconPath": "../miniprogram/icons/smine.png"
+      }
+    ],
+    "color": "#80848f",
+    "selectedColor": "#80848f",
+    "backgroundColor": "#fff",
+    "borderStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",

@@ -13,7 +13,7 @@
     <!-- <i-cell title="绑定手机" is-link url="/pages/bindphone/index"><i-icon slot="icon" type="mobilephone" size="20" color="#80848f" /></i-cell> -->
     <text>\n</text>
     <i-cell title="我的收藏" is-link url="/pages/dashboard/index"><i-icon slot="icon" type="collection" size="22" color="#f4d307" /></i-cell>
-    <i-cell title="我要摆摊" is-link url="/pages/dashboard/index"><i-icon slot="icon" type="add" size="22" color="#f4d307" /></i-cell>
+    <i-cell title="我要摆摊" is-link url="/pages/createMarker/createMarker"><i-icon slot="icon" type="add" size="22" color="#f4d307" /></i-cell>
     <text>\n</text>
     <!-- <i-cell title="联系客服" is-link url="/pages/dashboard/index"><i-icon slot="icon" type="customerservice" size="20" color="#80848f" /></i-cell>
     <i-cell title="帮助" is-link url="/pages/dashboard/index"><i-icon slot="icon" type="feedback" size="20" color="#80848f" /></i-cell> -->
