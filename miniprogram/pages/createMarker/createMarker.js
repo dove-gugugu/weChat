@@ -9,7 +9,8 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    imgUrl: ""
   },
 
   /**
@@ -75,6 +76,7 @@ Page({
 
   // 上传图片
   doUpload: function () {
+    let that = this;
     // 选择图片
     wx.chooseImage({
       count: 1,
@@ -95,11 +97,21 @@ Page({
           filePath,
           success: res => {
             console.log('[上传文件] 成功：', res)
+            // 显示上传成功后的摊位图片
+            that.setData({
+              imgUrl: res.fileID
+            })
+            
 
             app.globalData.fileID = res.fileID
             app.globalData.cloudPath = cloudPath
             app.globalData.imagePath = filePath
+            filedId = res.fileID
+
+            // 更新用户数据
+
             
+
             wx.navigateTo({
               url: '../storageConsole/storageConsole'
             })
