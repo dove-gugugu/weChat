@@ -10,7 +10,9 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    imgUrl: ""
+    imgUrl: '',
+    openid: '',
+    username: ''
   },
 
   /**
@@ -33,13 +35,16 @@ Page({
             success: res => {
               this.setData({
                 avatarUrl: res.userInfo.avatarUrl,
-                userInfo: res.userInfo
+                userInfo: res.userInfo,
+                username: res.userInfo.nickName
               })
             }
           })
         }
       }
     })
+
+    this.onGetOpenid();
 
   },
 
@@ -60,10 +65,12 @@ Page({
       data: {},
       success: res => {
         console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
-        wx.navigateTo({
-          url: '../userConsole/userConsole',
-        })
+        this.setData({openid: res.result.openid})
+        // app.globalData.openid = res.result.openid
+        // wx.navigateTo({
+        //   url: '../userConsole/userConsole',
+        // })
+        // console.log(this.data.openid)
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)
@@ -91,7 +98,7 @@ Page({
         const filePath = res.tempFilePaths[0]
         
         // 上传图片
-        const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]
+        const cloudPath = 'markers_img/' + that.data.openid + 'marker_image' + filePath.match(/\.[^.]+?$/)[0]
         wx.cloud.uploadFile({
           cloudPath,
           filePath,
@@ -102,11 +109,9 @@ Page({
               imgUrl: res.fileID
             })
             
-
             app.globalData.fileID = res.fileID
             app.globalData.cloudPath = cloudPath
             app.globalData.imagePath = filePath
-            filedId = res.fileID
 
             // 更新用户数据
 
