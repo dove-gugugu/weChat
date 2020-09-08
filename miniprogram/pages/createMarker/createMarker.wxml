@@ -1,8 +1,32 @@
 <!--miniprogram/pages/createMarker/createMarker.wxml-->
-<!-- <i-button type="primary" bind:click="handleClick">这是一个按钮</i-button> -->
+
 <i-row>
-    创建自己的摊位
+    标题：创建自己的摊位（待改）
 </i-row>
+
+<!-- 用户 openid -->
+<view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+      size="default"
+    ></button>
+    <view class="userinfo-nickname-wrapper">
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+</view>
+<!-- 上传图片 -->
+<view class="uploader">
+    <view class="uploader-text" bindtap="doUpload">
+      <text>上传摊位图片</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+</view>
+
 <i-panel title="基本信息">
     <i-input value="{{ marker_title }}" title="摊位名称" autofocus placeholder="名字" />
     <i-input value="{{ value2 }}" type="number" title="联系电话" placeholder="请输入手机号" mode="wrapped" />
